@@ -115,8 +115,6 @@ $pagina->htmlCardsServicos();
 //    foreach ($marcas as $m){
 //        echo $m;
 //    }
-    
-    
         
         ?>
 
@@ -128,13 +126,13 @@ $pagina->htmlCardsServicos();
                 <div class="brand-wrapper">
                     <div class="brand-list">
                         <?php 
-                            $marcas = ["Naruto", "Marvel", "DC", "Harry Potter", "Star Wars", "Dragon Ball"];
-//                            $marcas = $pagina->sqlSelect("select * from marcas");
+//                            $marcas = ["Naruto", "Marvel", "DC", "Harry Potter", "Star Wars", "Dragon Ball"];
+                          $marcas = $pagina->sqlSelect("select * from marca");
 //                            var_dump($marcas);
                             foreach ($marcas as $m){
                                 ?>
-                                <a href="<?php echo SITE."catalogo.php?marca=".$m; ?>">
-                                    <img src="<?php echo SITE."_imagem/_logo/".$m.".png"; ?>" alt="<?php echo $m; ?>">
+                                <a href="<?php echo SITE."catalogo.php?marca=".$m['id']; ?>">
+                                    <img src="<?php echo SITE."_imagem/_logo/".$m['nome'].".png"; ?>" alt="<?php echo $m['nome']; ?>">
                                 </a>
                                 <?php
                             }

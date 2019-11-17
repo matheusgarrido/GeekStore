@@ -1,13 +1,19 @@
 <?php
 
-define("USER", "root");
-define("PASS", "");
-define("BANCO", "geekstore");
-define("SITE", "http://localhost/geekstore/");
-
 class Pagina{
+//    private $user;
+//    private $pass;
+//    private $user;
+//    private $user;
+    
     function __construct($titulo){
         $this->htmlHead($titulo);
+        
+        define("HOST", "localhost");
+        define("USER", "root");
+        define("PASS", "");
+        define("BANCO", "dbgeekstore");
+        define("SITE", "http://localhost/geekstore/");
     }
     
     function htmlHead($subtitulo){
@@ -60,7 +66,7 @@ class Pagina{
                     <li><img src="img/h4-slide.png" alt="Slide">
                         <div class="caption-group">
                             <h2 class="caption title">
-                                Camiseta de <br> <span class="primary"> Harry Potter <br> da <strong> Grifinória <br></strong></span> Dupla Face
+                                Camiseta de <br><span class="primary"> Harry Potter <br> da <strong> Grifinória <br></strong></span> Dupla Face
                             </h2>
                             <!--<h4 class="caption subtitle"></h4>-->
                             <a class="caption button-radius" href="#"><span class="icon"></span>Detalhes do produto</a>
@@ -146,12 +152,6 @@ class Pagina{
                                 <h1><a href="index.php"><img src="_imagem/_logo/geekstore.png" width="150"></a></h1>
                             </div>
                         </div>
-
-        <!--                <div class="col-sm-6">
-                            <div class="shopping-item">
-                                <a href="cart.html">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </div> <!-- End site branding area -->
@@ -169,14 +169,10 @@ class Pagina{
                         </div> 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.php">Início</a></li>
-                                <li><a href="shop.html">Produtos</a></li>
-                                <li><a href="single-product.html">Marcas</a></li>
-        <!--                        <li><a href="cart.html">Cart</a></li>
-                                <li><a href="checkout.html">Checkout</a></li>
-                                <li><a href="#">Category</a></li>
-                                <li><a href="#">Others</a></li>-->
-                                <li><a href="#">Contato</a></li>
+                                <li class="active"><a href="<?php echo SITE; ?>">Início</a></li>
+                                <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
+                                <li><a href="<?php echo SITE."marcas.php"; ?>">Marcas</a></li>
+                                <li><a href="<?php echo SITE."contato.php"; ?>">Contato</a></li>
                             </ul>
                         </div>  
                     </div>
@@ -282,26 +278,18 @@ class Pagina{
         $connect = mysqli_connect(HOST, USER, PASS, BANCO) or die('Não foi possível conectar no banco.');
         $result = mysqli_query($connect, $selectQuery);
         $vetor = array();
-    //    echo $selectQuery."<br>";
-        //Gerando array da Área
-    //    var_dump($result);
         if (mysqli_num_rows($result)>0){
             while ($row = mysqli_fetch_assoc($result)){
-    //            var_dump($row);
                 $vetor[]=$row;
-    //            var_dump($vetor);
             }
         }
-    //    print_r($vetor);
-    //    var_dump($vetor);
         mysqli_close($connect);
-    //    var_dump($vetor);
         return $vetor;
     }
-    
-    function nomeLink($nome){
-        $nomeLink = $nome;
-        return $nomeLink;
-    }
+//    
+//    function nomeLink($nome){
+//        $nomeLink = $nome;
+//        return $nomeLink;
+//    }
 }
 ?>
