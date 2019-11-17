@@ -172,7 +172,7 @@ class Pagina{
                                 <li class="active"><a href="<?php echo SITE; ?>">Início</a></li>
                                 <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
                                 <li><a href="<?php echo SITE."marca.php"; ?>">Marcas</a></li>
-                                <li><a href="<?php echo SITE."contato.php"; ?>">Contato</a></li>
+                                <!--<li><a href="<?php // echo SITE."contato.php"; ?>">Contato</a></li>-->
                             </ul>
                         </div>  
                     </div>
@@ -207,7 +207,7 @@ class Pagina{
                                     <li><a href="<?php echo SITE; ?>">Página principal</a></li>
                                     <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
                                     <li><a href="<?php echo SITE."marca.php"; ?>">Marcas</a></li>
-                                    <li><a href="<?php echo SITE."contato.php"; ?>">Contato</a></li>
+                                    <!--<li><a href="<?php // echo SITE."contato.php"; ?>">Contato</a></li>-->
                                 </ul>                        
                             </div>
                         </div>
@@ -216,9 +216,9 @@ class Pagina{
                             <div class="footer-menu">
                                 <h2 class="footer-wid-title">Marcas</h2>
                                 <ul>
-                                    <li><a href="<?php echo SITE."catalogo.php?marca=Marvel"; ?>">Marvel</a></li>
-                                    <li><a href="<?php echo SITE."catalogo.php?marca=DC"; ?>">DC</a></li>
-                                    <li><a href="<?php echo SITE."catalogo.php?marca=Star%20Wars"; ?>">Star Wars</a></li>
+                                    <li><a href="<?php echo SITE."catalogo.php?marca=1"; ?>">Marvel</a></li>
+                                    <li><a href="<?php echo SITE."catalogo.php?marca=2"; ?>">DC</a></li>
+                                    <!--<li><a href="<?php // echo SITE."catalogo.php?marca=3"; ?>">Star Wars</a></li>-->
                                     <li><a href="<?php echo SITE."marca.php"; ?>">Outras marcas</a></li>
                                 </ul>                        
                             </div>
@@ -275,6 +275,7 @@ class Pagina{
     }
     
     function sqlSelect($selectQuery){
+//        var_dump($selectQuery);
         $connect = mysqli_connect(HOST, USER, PASS, BANCO) or die('Não foi possível conectar no banco.');
         $result = mysqli_query($connect, $selectQuery);
         $vetor = array();

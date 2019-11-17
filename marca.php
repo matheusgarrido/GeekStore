@@ -25,12 +25,10 @@ $pagina->htmlCabecalho();
                 $marcas = $pagina->sqlSelect("select idMarca as id, nome from marca");
                 foreach ($marcas as $m){
                     $m['nome'] = utf8_encode($m['nome']);
-                    $m['descricao'] = utf8_encode($m['descricao']);
                     ?>
                         <div class="col-md-3 col-sm-6">
                             <div class="single-shop-product">
                                 <a href="<?php echo SITE."catalogo.php?marca={$m['id']}"; ?>">
-
                                     <div class="product-upper">
                                         <?php
                                             $urlImg = SITE."_imagem/_marca/{$m['nome']}.png";

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2019 às 20:17
+-- Tempo de geração: 17-Nov-2019 às 23:51
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.8
 
@@ -120,28 +120,27 @@ INSERT INTO `estoque` (`idProduto`, `tamanho`, `qtdEstoque`) VALUES
 
 CREATE TABLE `marca` (
   `idMarca` int(10) UNSIGNED NOT NULL,
-  `nome` varchar(50) NOT NULL,
-  `descricao` varchar(50) NOT NULL
+  `nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `marca`
 --
 
-INSERT INTO `marca` (`idMarca`, `nome`, `descricao`) VALUES
-(1, 'Marvel', ''),
-(2, 'DC', ''),
-(3, 'Star Wars', ''),
-(4, 'Harry Potter', ''),
-(5, 'Game of Thrones', ''),
-(6, 'Looney Tunes', ''),
-(7, 'Turma da Mônica', ''),
-(8, 'Disney', ''),
-(9, 'Rick and Morty', ''),
-(10, 'Stranger Things', ''),
-(11, 'Riverdale', ''),
-(12, 'Naruto', ''),
-(13, 'Dragon Ball', '');
+INSERT INTO `marca` (`idMarca`, `nome`) VALUES
+(1, 'Marvel'),
+(2, 'DC'),
+(3, 'Star Wars'),
+(4, 'Harry Potter'),
+(5, 'Game of Thrones'),
+(6, 'Looney Tunes'),
+(7, 'Turma da Mônica'),
+(8, 'Disney'),
+(9, 'Rick and Morty'),
+(10, 'Stranger Things'),
+(11, 'Riverdale'),
+(12, 'Naruto'),
+(13, 'Dragon Ball');
 
 -- --------------------------------------------------------
 
@@ -156,7 +155,7 @@ CREATE TABLE `produto` (
   `marca` int(10) UNSIGNED NOT NULL,
   `tipo` int(10) UNSIGNED NOT NULL,
   `cor` varchar(50) NOT NULL,
-  `tecido` varchar(100) NOT NULL
+  `tecido` tinytext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -165,23 +164,23 @@ CREATE TABLE `produto` (
 
 INSERT INTO `produto` (`idProduto`, `nome`, `preco`, `marca`, `tipo`, `cor`, `tecido`) VALUES
 (1, 'Avengers Endgame', 59.9, 1, 1, 'Preto', '50% Algodão 50% Poliéster'),
-(2, 'Batman Logo', 59.9, 2, 2, 'Preto', '100% Algodão'),
-(3, 'Cascão', 59.9, 3, 7, 'Cinza', '100% Algodão'),
-(4, 'Cebolinha', 129.9, 7, 4, 'Vermelho', '100% Algodão'),
-(5, 'Capitão América Escudo Marvel', 49.9, 1, 1, 'Preto', '50% Algodão 50% Poliéster'),
-(6, 'Rick And Morty Nave', 49.9, 9, 5, 'Branco', '100% Algodão'),
-(7, 'Aba Reta Hulk', 69.9, 1, 7, 'Cinza', '100% Algodão'),
-(8, 'Aba Curva Superman', 79.9, 2, 3, 'Preto', '50% Algodão 50% Poliéster'),
-(9, 'Malévola Meme', 119.9, 8, 2, 'Verde', '100% Algodão'),
-(10, 'Vingadores', 39.9, 1, 4, 'Preto', '50% Algodão 50% Poliéster'),
-(11, 'Capitã Marvel Uniforme', 116.9, 1, 3, 'Azul', '100% Algodão'),
-(12, 'Riverdale Vixens', 39.9, 11, 6, 'Preto', '100% Algodão'),
-(13, 'Dragon Ball Super', 59.9, 13, 1, 'Preto', '100% Algodão'),
-(14, 'Stranger Things Hawkins', 59.9, 10, 1, 'Preto', '100% Algodão'),
-(15, 'Avengers', 59.9, 1, 1, 'Preto', '100% Algodão'),
-(16, 'Superman', 59.9, 2, 1, 'Preto', '100% Algodão'),
-(17, 'Harry Potter', 59.9, 4, 1, 'Preto', '100% Algodão'),
-(18, 'Looney Tunes Pernalonga', 59.9, 6, 1, 'Preto', '100% Algodão');
+(2, 'Batman Logo', 59.9, 2, 1, 'Preto', '100% Algodão'),
+(3, 'Cascão', 59.9, 7, 7, 'Amarelo', '100% Algodão'),
+(4, 'Cebolinha', 129.9, 7, 7, 'Verde', '100% Algodão'),
+(5, 'Capitão América Escudo Marvel', 49.9, 1, 4, 'Preto', '50% Algodão 50% Poliéster'),
+(6, 'Rick And Morty Nave', 49.9, 9, 4, 'Preto', '100% Algodão'),
+(7, 'Aba Reta Capitão América', 69.9, 1, 8, 'Azul', '100% Poliéster'),
+(8, 'Aba Curva Superman', 79.9, 2, 8, 'Azul', '100% Poliéster'),
+(9, 'Malévola Meme', 119.9, 8, 3, 'Preto', '100% Algodão'),
+(10, 'Vingadores', 39.9, 1, 3, 'Preto', '50% Algodão 50% Poliéster'),
+(11, 'Capitã Marvel Uniforme', 116.9, 1, 2, 'Azul', '100% Algodão'),
+(12, 'Riverdale Vixens', 39.9, 11, 2, 'Branco', '100% Algodão'),
+(13, 'Dragon Ball Super', 59.9, 13, 5, 'Laranja', '93% Poliéster 6% Viscose 1% Elastano Manga 55% Poliéster 45% Algodão'),
+(14, 'Stranger Things Hawkins', 59.9, 10, 5, 'Preto', '93% Poliéster 6% Viscose 1% Elastano Manga 55% Poliéster 45% Algodão'),
+(15, 'Avengers', 59.9, 1, 9, 'Preto', '100% Algodão'),
+(16, 'Superman', 59.9, 2, 9, 'Vermelho', '100% Algodão'),
+(17, 'Harry Potter', 59.9, 4, 6, 'Branco', '62% Algodão 28% Poliamida 05% Elastano 05% Elastodieno'),
+(18, 'Looney Tunes Pernalonga', 59.9, 6, 6, 'Cinza', '62% Algodão 28% Poliamida 05% Elastano 05% Elastodieno');
 
 -- --------------------------------------------------------
 
@@ -199,13 +198,15 @@ CREATE TABLE `tipo` (
 --
 
 INSERT INTO `tipo` (`idTipo`, `nome`) VALUES
-(1, 'Camiseta Comum'),
+(1, 'Camiseta'),
 (2, 'Camiseta com Manga'),
 (3, 'Camiseta Dupla Face'),
 (4, 'Baby Look'),
 (5, 'Jaqueta Bomber'),
 (6, 'Pijama'),
-(7, 'Baby Body');
+(7, 'Baby Body'),
+(8, 'Boné'),
+(9, 'Meias');
 
 --
 -- Índices para tabelas despejadas
@@ -251,13 +252,13 @@ ALTER TABLE `marca`
 -- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
-  MODIFY `idProduto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idProduto` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de tabela `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `idTipo` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `idTipo` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para despejos de tabelas
