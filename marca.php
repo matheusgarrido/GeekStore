@@ -22,37 +22,29 @@ $pagina->htmlCabecalho();
         <div class="container">
             <div class="row">
                 <?php
-                    $produtos = $pagina->sqlSelect("select p.idProduto, p.nome, t.nome as tipo, p.preco from produto p left join tipo t on t.idTipo=p.tipo");
-                    foreach ($produtos as $roupa){
-                        $roupa['nome'] = utf8_encode($roupa['nome']);
-                        ?>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="single-shop-product">
+                $marcas = $pagina->sqlSelect("select idMarca as id, nome from marca");
+                foreach ($marcas as $m){
+                    $m['nome'] = utf8_encode($m['nome']);
+                    $m['descricao'] = utf8_encode($m['descricao']);
+                    ?>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="single-shop-product">
+                                <a href="<?php echo SITE."catalogo.php?marca={$m['id']}"; ?>">
+
                                     <div class="product-upper">
                                         <?php
-                                            $frente = "frente";
-//                                            if($roupa['tipo']=="Camiseta Dupla Face") $frente = $frente."1";
-                                            $urlImg = SITE."_imagem/{$roupa['tipo']}/{$roupa['nome']}/{$frente}.jpg";
-//                                            echo $urlImg;
+                                            $urlImg = SITE."_imagem/_marca/{$m['nome']}.png";
                                         ?>
-                                        <img src="<?php echo $urlImg;?>" alt="Foto indisponível de <?php echo $roupa['tipo'];?>">
+                                        <img src="<?php echo $urlImg;?>" alt="Foto indisponível da marca">
                                     </div>
-                                    <h2>
-                                        <a href="<?php echo SITE."produto.php?produto={$roupa['id']}"; ?>">
-                                            <?php echo ($roupa['nome']); ?>
-                                        </a>
-                                    </h2>
-                                    <div class="product-carousel-price">
-                                        <ins>R$ <?php echo $roupa['preco']?></ins>
-                                        <!--<del>$999.00</del>-->
-                                    </div>  
                                     <div class="product-option-shop">
-                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
-                                    </div>                       
-                                </div>
+                                        <div class="add_to_cart_button">Pesquisar</div>
+                                    </div>
+                                </a>
                             </div>
-                        <?php
-                    }
+                        </div>
+                    <?php
+                }
                 ?>
             </div>
             

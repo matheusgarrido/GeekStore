@@ -171,7 +171,7 @@ class Pagina{
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="<?php echo SITE; ?>">Início</a></li>
                                 <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
-                                <li><a href="<?php echo SITE."marcas.php"; ?>">Marcas</a></li>
+                                <li><a href="<?php echo SITE."marca.php"; ?>">Marcas</a></li>
                                 <li><a href="<?php echo SITE."contato.php"; ?>">Contato</a></li>
                             </ul>
                         </div>  
