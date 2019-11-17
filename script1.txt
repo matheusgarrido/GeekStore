@@ -32,13 +32,15 @@ CREATE TABLE estoque (
 
 
 INSERT INTO tipo (nome) VALUES
-("Camiseta Comum"), 
-("Camiseta com Manga"), 
-("Camiseta Dupla Face"), 
-("Baby Look"), 
-("Jaqueta Bomber"),
-("Pijama"), 
-("Baby Body");
+("Camiseta Comum"), =
+("Camiseta com Manga"), =
+("Camiseta Dupla Face"),= 
+("Baby Look"), =
+("Jaqueta Bomber"),=
+("Pijama"), =
+("Baby Body"); =
+("Boné");
+("Meias");
 
 INSERT INTO marca (nome) VALUES
 ("Marvel"),
@@ -57,23 +59,23 @@ INSERT INTO marca (nome) VALUES
 
 INSERT INTO produto (nome, preco, marca, tipo, cor, tecido) VALUES
 ("Avengers Endgame", 59.90, 1, 1, "Preto", "50% Algodão 50% Poliéster"),
-("Batman Logo", 59.90, 2, 2, "Preto", "100% Algodão"),
+("Batman Logo", 59.90, 2, 1, "Preto", "100% Algodão"),
 ("Cascão", 59.90, 3,7,"Cinza","100% Algodão"),
 ("Cebolinha", 129.90,7,4,"Vermelho","100% Algodão"),
-("Capitão América Escudo Marvel", 49.90, 1,1,"Preto","50% Algodão 50% Poliéster"),
-("Rick And Morty Nave", 49.90, 9,5,"Branco","100% Algodão"),
-("Aba Reta Hulk", 69.90, 1,7,"Cinza","100% Algodão"),
-("Aba Curva Superman", 79.90, 2,3,"Preto","50% Algodão 50% Poliéster"),
-("Malévola Meme", 119.90,8,2,"Verde","100% Algodão"),
-("Vingadores", 39.90, 1,4,"Preto","50% Algodão 50% Poliéster"),
-("Capitã Marvel Uniforme", 116.90, 1,3,"Azul","100% Algodão"),
-("Riverdale Vixens", 39.90, 11,6,"Preto","100% Algodão"),
-("Dragon Ball Super", 59.90, 13,1,"Preto","100% Algodão"),
-("Stranger Things Hawkins", 59.90, 10,1,"Preto","100% Algodão"),
-("Avengers", 59.90, 1,1,"Preto","100% Algodão"),
-("Superman", 59.90, 2,1,"Preto","100% Algodão"),
-("Harry Potter", 59.90, 4,1,"Preto","100% Algodão"),
-("Looney Tunes Pernalonga", 59.90, 6,1,"Preto","100% Algodão");
+("Capitão América Escudo Marvel", 49.90, 1,4,"Preto","50% Algodão 50% Poliéster"),
+("Rick And Morty Nave", 49.90, 9,4,"Branco","100% Algodão"),
+("Aba Reta Hulk", 69.90, 1,8,"Cinza","100% Algodão"),
+("Aba Curva Superman", 79.90, 2,8,"Preto","50% Algodão 50% Poliéster"),
+("Malévola Meme", 119.90,8,3,"Verde","100% Algodão"),
+("Vingadores", 39.90, 1,3,"Preto","50% Algodão 50% Poliéster"),
+("Capitã Marvel Uniforme", 116.90, 1,2,"Azul","100% Algodão"),
+("Riverdale Vixens", 39.90, 11,2,"Preto","100% Algodão"),
+("Dragon Ball Super", 59.90, 13,5,"Preto","100% Algodão"),
+("Stranger Things Hawkins", 59.90, 10,5,"Preto","100% Algodão"),
+("Avengers", 59.90, 1,9,"Preto","100% Algodão"),
+("Superman", 59.90, 2,9,"Preto","100% Algodão"),
+("Harry Potter", 59.90, 4,6,"Preto","100% Algodão"),
+("Looney Tunes Pernalonga", 59.90, 6,6,"Preto","100% Algodão");
 
 
 INSERT INTO estoque (idProduto, tamanho, qtdEstoque) VALUES
