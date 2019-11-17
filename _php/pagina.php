@@ -206,7 +206,7 @@ class Pagina{
                                 <ul>
                                     <li><a href="<?php echo SITE; ?>">Página principal</a></li>
                                     <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
-                                    <li><a href="<?php echo SITE."marcas.php"; ?>">Marcas</a></li>
+                                    <li><a href="<?php echo SITE."marca.php"; ?>">Marcas</a></li>
                                     <li><a href="<?php echo SITE."contato.php"; ?>">Contato</a></li>
                                 </ul>                        
                             </div>
@@ -219,7 +219,7 @@ class Pagina{
                                     <li><a href="<?php echo SITE."catalogo.php?marca=Marvel"; ?>">Marvel</a></li>
                                     <li><a href="<?php echo SITE."catalogo.php?marca=DC"; ?>">DC</a></li>
                                     <li><a href="<?php echo SITE."catalogo.php?marca=Star%20Wars"; ?>">Star Wars</a></li>
-                                    <li><a href="<?php echo SITE."marcas.php"; ?>">Outras marcas</a></li>
+                                    <li><a href="<?php echo SITE."marca.php"; ?>">Outras marcas</a></li>
                                 </ul>                        
                             </div>
                         </div>

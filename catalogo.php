@@ -32,7 +32,7 @@ $pagina->htmlCabecalho();
                                         <?php
                                             $frente = "frente";
                                             if($roupa['tipo']=="Camiseta Dupla Face") $frente = $frente."1";
-                                            $urlImg = SITE."_imagem/{$roupa['tipo']}/{$roupa['nome']}/{$frente}.jpg";
+                                            $urlImg = SITE."_imagem/_produto/{$roupa['tipo']}/{$roupa['nome']}/{$frente}.jpg";
 //                                            echo $urlImg;
                                         ?>
                                         <img src="<?php echo $urlImg;?>" alt="Foto indisponível de <?php echo $roupa['tipo'];?>">
