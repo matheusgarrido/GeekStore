@@ -1,0 +1,75 @@
+#menu { 
+    background-color: red;
+    padding: 0 50px 0 0;
+    margin: 0;
+    //font-family: FONT;
+    font-size: 20px;
+	text-align: right;
+}
+#menu ul {
+    list-style-type: none;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    min-width: 225px;
+	//height: 20px;
+}
+#menu ul li {
+    display: inline-block;
+    padding: 0px;
+}
+#menu ul li:hover {
+    background-color: darkred;
+}
+
+#menu ul li:after {
+  content: "";
+  font-size: 0;
+  display: block;
+  height: 5px;
+}
+#menu ul li:hover:after {
+  background: white;
+}
+#menu ul ul li:hover:after {
+  background: transparent;
+}
+#menu ul li a, visited {
+    color: white;
+    display: block;
+    padding: 5px 15px;
+    text-decoration: none;
+}
+#menu ul li:hover ul {
+    display: block;
+}
+#menu ul ul {
+    display: none;
+    position: absolute;
+	background-color: darkred;
+    border-top: 0;
+    margin-top: 5px;
+        z-index: 10;
+	text-align: left;
+}
+#menu ul ul li {
+    display: block;
+}
+:hover{
+	background-color: red;
+}
+#menu ul ul li a:hover {
+    color: white;
+}
+
+#menu #logo{
+	float: left;
+	font-size:30px;
+}
+#menu #logo:hover {
+	background-color: red;
+	text-decoration: none;
+}
+#menu #logo ul li:hover:after {
+  background: transparent;
+}

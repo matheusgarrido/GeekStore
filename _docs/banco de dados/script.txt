@@ -1,0 +1,66 @@
+CREATE DATABASE dbgeekstore;
+
+USE dbgeekstore;
+
+CREATE TABLE tipo (
+	idTipo int unsigned not null auto_increment primary key,
+	nome varchar(50) not null
+);
+CREATE TABLE marca (
+	idMarca int unsigned not null auto_increment primary key,
+	nome varchar(50) not null
+);
+CREATE TABLE produto (
+	idProduto int unsigned not null auto_increment primary key,
+	nome varchar(100) not null,
+	preco float unsigned not null,
+	marca int unsigned not null,
+	tipo int unsigned not null,
+	cor varchar(50) not null,
+	tecido varchar(100) not null,
+	foreign key (tipo) references tipo('idTipo'),
+	foreign key (marca) references marca('idMarca')
+);
+CREATE TABLE estoque (
+	idProduto int unsigned not null,
+	tamanho varchar(3) not null,
+	qtdEstoque int unsigned not null,
+	foreign key (idProduto) references produto('idProduto'),
+	CONSTRAINT idEstoque PRIMARY KEY (idProduto, tamanho)
+);
+
+INSERT INTO tipo (nome) VALUES
+("Camiseta Comum"), 
+("Camiseta com Manga"), 
+("Camiseta Dupla Face"), 
+("Baby Look"), 
+("Jaqueta Bomber"),
+("Pijama"), 
+("Baby Body");
+
+INSERT INTO marca (nome) VALUES
+("Marvel"),
+("DC"),
+("Star Wars"),
+("Harry Potter"),
+("Game of Thrones"),
+("Looney Tunes"),
+("Turma da Mônica"),
+("Disney"),
+("Rick and Morty"),
+("Stranger Things"),
+("Riverdale"),
+("Naruto"),
+("Dragon Ball");
+
+INSERT INTO produto (nome, preco, marca, tipo, cor, tecido) VALUES
+("Avengers Endgame", 59.90, 1, 1, "Preto", "50% Algodão 50% Poliéster"),
+	...
+("Batman Logo", 59.90, 2, 1, "Preto", "100% Algodão");
+
+INSERT INTO estoque (idProduto, tamanho, qtdEstoque) VALUES
+(1, "P", 0), (1, "M", 0), (1, "G", 0), (1, "GG", 0),
+(2, "P", 0), (2, "M", 0), (2, "G", 0), (2, "GG", 0),
+(3, "P", 0), (3, "M", 0), (3, "G", 0), (3, "GG", 0),
+	...
+;
