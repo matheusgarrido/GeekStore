@@ -1,5 +1,0 @@
-Babylook: 59,90
-Camisa: 59,90
-Camisa dupla face: 69,90
-Camiseta: 49,90
-Casaco: 79,90

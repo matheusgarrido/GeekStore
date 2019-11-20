@@ -7,6 +7,10 @@
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.3.8
 
+CREATE DATABASE dbgeekstore;
+
+USE dbgeekstore;
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
