@@ -10,10 +10,11 @@ if (isset($_GET['marca']) && isset($_GET['produto'])){
 elseif (isset($_GET['marca'])) {
     $sql = "{$sql} where p.marca = {$_GET['marca']}";
 }
-elseif (isset($_GET['marca'])) {
+elseif (isset($_GET['produto'])) {
     $sql = "{$sql} where p.tipo = {$_GET['produto']}";
 }
 $produtos = $pagina->sqlSelect("{$sql} order by p.idProduto");
+//echo $sql;
 ?>
     <div class="product-big-title-area">
         <div class="container">

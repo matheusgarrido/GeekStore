@@ -68,7 +68,7 @@ body { font-family:Arial, Helvetica, sans-serif; }
     border: medium none;
     border-radius: 0;
     left: 50%;
-    margin-left: -50px;
+    margin-left: 50px;
     min-width: 100px;
     text-align: center;
 }

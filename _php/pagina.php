@@ -1,11 +1,6 @@
 <?php
 
 class Pagina{
-//    private $user;
-//    private $pass;
-//    private $user;
-//    private $user;
-    
     function __construct($titulo){
         $this->htmlHead($titulo);
         
@@ -20,7 +15,7 @@ class Pagina{
         $titulo="Geek Store";
         if($subtitulo!=null){
             $titulo=$titulo." - ".$subtitulo;
-        }    
+        }
         ?>
         <!DOCTYPE html>
         <html lang="pt-br">
@@ -169,9 +164,18 @@ class Pagina{
                         </div> 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="<?php echo SITE; ?>">Início</a></li>
-                                <li><a href="<?php echo SITE."catalogo.php"; ?>">Produtos</a></li>
+                                <!--<li><a href="<?php // echo SITE; ?>"></a></li>-->
+                                <!--<li><a href="<?php // echo SITE."catalogo.php"; ?>">Produtos</a></li>-->
+                                <li><a href="<?php echo SITE."catalogo.php"; ?>"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
                                 <li><a href="<?php echo SITE."marca.php"; ?>">Marcas</a></li>
+                                <?php
+                                    $tipos = $this->sqlSelect("SELECT * FROM `tipo` order by idTipo asc");
+                                    foreach ($tipos as $tipo){
+                                        ?>
+                                <li><a href="<?php echo SITE."catalogo.php?produto={$tipo["idTipo"]}"; ?>"><?php echo utf8_encode($tipo["nome"]);?></a></li>
+                                        <?php
+                                    }
+                                ?>
                                 <!--<li><a href="<?php // echo SITE."contato.php"; ?>">Contato</a></li>-->
                             </ul>
                         </div>  
@@ -232,7 +236,7 @@ class Pagina{
                     <div class="row">
                         <div class="col-md-8">
                             <div class="copyright">
-                                <p>&copy; 2019 Garlipe. Todos direitos reservados.
+                                <p>&copy; 2019 Matheus Garrido Dias e Filipe Pires Machado. Todos direitos reservados.
                                     <!--<a href="http://www.freshdesignweb.com" target="_blank">freshDesignweb.com</a>-->
                                 </p>
                             </div>
